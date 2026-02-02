@@ -45,6 +45,17 @@ If the PORT variable is not provided, the server will stop and throw an explicit
 Error: PORT environment variable is not defined
 This ensures the application does not run in an invalid state, following best practices used in NestJS applications
 
+const http = require('http');
+
+const PORT = process.env.PORT
+if (!PORT) throw new Error('PORT environment variable is not defined')
+
+http.createServer((req, res) => {
+  res.end('Server is running!')
+}).listen(PORT, () => {
+  console.log(`Server started on port ${PORT}`)
+})
+
 ## Server Startup Flow
 
 Load environment variables
