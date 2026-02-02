@@ -66,6 +66,4 @@ Initialize clustering (if enabled)
 
 Start the server on the specified port
 
- 
-
 
